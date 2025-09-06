@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.98 0.02 280); /* #faf8ff - Soft purple-tinted white */
+  --foreground: oklch(0.25 0.05 280); /* #2d1b69 - Deep purple text */
+  --card: oklch(0.96 0.03 280 / 0.9); /* Semi-transparent purple-tinted cards */
+  --card-foreground: oklch(0.25 0.05 280); /* Deep purple card text */
+  --popover: oklch(0.98 0.02 280 / 0.95); /* Glass popover background */
+  --popover-foreground: oklch(0.25 0.05 280); /* Popover text */
+  --primary: oklch(0.55 0.2 280); /* #8b5cf6 - Vibrant purple primary */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.65 0.15 320); /* #c084fc - Light purple accent */
+  --secondary-foreground: oklch(0.25 0.05 280); /* Dark text on secondary */
+  --muted: oklch(0.94 0.02 280 / 0.75); /* Muted glass background */
+  --muted-foreground: oklch(0.45 0.03 280); /* Muted text */
+  --accent: oklch(0.7 0.18 300); /* #a855f7 - Purple accent */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.55 0.22 25); /* #dc2626 - Red for destructive actions */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.88 0.02 280 / 0.3); /* Semi-transparent purple borders */
+  --input: oklch(0.96 0.02 280 / 0.8); /* Glass input background */
+  --ring: oklch(0.55 0.2 280 / 0.5); /* Purple focus ring */
+  --chart-1: oklch(0.55 0.2 280); /* Purple chart color */
+  --chart-2: oklch(0.65 0.15 320); /* Light purple chart color */
+  --chart-3: oklch(0.6 0.18 260); /* Blue-purple chart color */
+  --chart-4: oklch(0.7 0.15 300); /* Pink-purple chart color */
+  --chart-5: oklch(0.5 0.22 240); /* Deep blue-purple chart color */
+  --radius: 0.75rem; /* Increased radius for modern glass look */
+  --sidebar: oklch(0.96 0.03 280 / 0.9); /* Glass sidebar */
+  --sidebar-foreground: oklch(0.25 0.05 280); /* Sidebar text */
+  --sidebar-primary: oklch(0.55 0.2 280); /* Sidebar primary */
+  --sidebar-primary-foreground: oklch(1 0 0); /* Sidebar primary text */
+  --sidebar-accent: oklch(0.65 0.15 320); /* Sidebar accent */
+  --sidebar-accent-foreground: oklch(0.25 0.05 280); /* Sidebar accent text */
+  --sidebar-border: oklch(0.88 0.02 280 / 0.3); /* Sidebar border */
+  --sidebar-ring: oklch(0.55 0.2 280 / 0.5); /* Sidebar focus ring */
+}
+
+.dark {
+  --background: oklch(0.08 0.02 280); /* #0f0a1a - Deep purple background */
+  --foreground: oklch(0.95 0.02 280); /* Light purple-tinted white */
+  --card: oklch(0.12 0.03 280 / 0.9); /* Dark glass cards */
+  --card-foreground: oklch(0.95 0.02 280); /* Light card text */
+  --popover: oklch(0.12 0.03 280 / 0.95); /* Dark glass popover */
+  --popover-foreground: oklch(0.95 0.02 280); /* Light popover text */
+  --primary: oklch(0.65 0.2 280); /* Brighter purple for dark mode */
+  --primary-foreground: oklch(0.08 0.02 280); /* Dark text on primary */
+  --secondary: oklch(0.2 0.05 280); /* Dark purple secondary */
+  --secondary-foreground: oklch(0.95 0.02 280); /* Light text on secondary */
+  --muted: oklch(0.15 0.03 280 / 0.75); /* Dark muted glass */
+  --muted-foreground: oklch(0.7 0.02 280); /* Muted light text */
+  --accent: oklch(0.7 0.18 300); /* Bright purple accent */
+  --accent-foreground: oklch(0.08 0.02 280); /* Dark text on accent */
+  --destructive: oklch(0.6 0.22 25); /* Brighter red for dark mode */
+  --destructive-foreground: oklch(0.95 0.02 280); /* Light text on destructive */
+  --border: oklch(0.25 0.03 280 / 0.3); /* Dark glass borders */
+  --input: oklch(0.15 0.03 280 / 0.8); /* Dark glass inputs */
+  --ring: oklch(0.65 0.2 280 / 0.5); /* Bright purple focus ring */
+  --chart-1: oklch(0.65 0.2 280); /* Bright purple chart */
+  --chart-2: oklch(0.7 0.15 320); /* Light purple chart */
+  --chart-3: oklch(0.6 0.18 260); /* Blue-purple chart */
+  --chart-4: oklch(0.75 0.15 300); /* Pink-purple chart */
+  --chart-5: oklch(0.55 0.22 240); /* Deep blue-purple chart */
+  --sidebar: oklch(0.12 0.03 280 / 0.9); /* Dark glass sidebar */
+  --sidebar-foreground: oklch(0.95 0.02 280); /* Light sidebar text */
+  --sidebar-primary: oklch(0.65 0.2 280); /* Bright sidebar primary */
+  --sidebar-primary-foreground: oklch(0.08 0.02 280); /* Dark sidebar primary text */
+  --sidebar-accent: oklch(0.2 0.05 280); /* Dark sidebar accent */
+  --sidebar-accent-foreground: oklch(0.95 0.02 280); /* Light sidebar accent text */
+  --sidebar-border: oklch(0.25 0.03 280 / 0.3); /* Dark sidebar border */
+  --sidebar-ring: oklch(0.65 0.2 280 / 0.5); /* Bright sidebar focus ring */
+}
+
+@theme inline {
+  /* Updated font configuration to use Fustat instead of Geist */
+  --font-sans: var(--font-fustat);
+  --font-mono: var(--font-fustat);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added glassmorphism utility classes */
+  .glass {
+    @apply backdrop-blur-md bg-card/90 border border-border/30;
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-lg bg-card/95 border border-border/40;
+  }
+
+  .glass-subtle {
+    @apply backdrop-blur-sm bg-card/75 border border-border/20;
+  }
+}
