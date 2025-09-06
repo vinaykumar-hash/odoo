@@ -75,7 +75,7 @@
 }
 
 @theme inline {
-  /* Updated font configuration to use Fustat instead of Geist */
+  /* Updated font configuration to use Fustat instead of Figtree */
   --font-sans: var(--font-fustat);
   --font-mono: var(--font-fustat);
   --color-background: var(--background);
@@ -118,22 +118,32 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    /* Fixed Tailwind CSS v4 syntax by removing invalid border-border class */
+    border-color: var(--color-border);
+    outline-color: var(--color-ring);
+    outline-width: 0;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
 
   /* Added glassmorphism utility classes */
   .glass {
-    @apply backdrop-blur-md bg-card/90 border border-border/30;
+    backdrop-filter: blur(12px);
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
   }
 
   .glass-strong {
-    @apply backdrop-blur-lg bg-card/95 border border-border/40;
+    backdrop-filter: blur(16px);
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
   }
 
   .glass-subtle {
-    @apply backdrop-blur-sm bg-card/75 border border-border/20;
+    backdrop-filter: blur(8px);
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
   }
 }

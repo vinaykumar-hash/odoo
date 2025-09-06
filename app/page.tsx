@@ -20,7 +20,7 @@ export default function LandingPage() {
       {/* Content Layer */}
       <div className="relative z-10">
         {/* Header */}
-        <header className="border-b border-border backdrop-blur-xl glass-strong shadow-lg">
+        <header className="border-b border-slate-200 dark:border-slate-800 backdrop-blur-xl glass-strong shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
@@ -93,7 +93,7 @@ export default function LandingPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-border hover:bg-muted glass-subtle text-foreground shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent"
+                  className="border-slate-200 dark:border-slate-700 hover:bg-muted glass-subtle text-foreground shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent"
                 >
                   Talk to Sales
                 </Button>
